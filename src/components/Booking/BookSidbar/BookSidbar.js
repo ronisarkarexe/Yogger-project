@@ -1,7 +1,7 @@
 import React from 'react';
 import './BookSidbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faShoppingCart, faList, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import logo from '../../../Icon/lotus.png';
 
@@ -10,10 +10,10 @@ const BookSidbar = () => {
       <div>
          <div class="sidebar-contain ms-5">
             <img class="img-fluid image-size" src={logo} alt=""/> <br/>
-            <Link ><button class="mt-4 button-size"> <FontAwesomeIcon icon={faCoffee}/> Book Payment</button></Link> <br/>
-            <Link ><button class="mt-4 button-size">  <FontAwesomeIcon icon={faCoffee}/>  Booking List</button></Link> <br/>
-            <Link ><button class="mt-4 button-size"> <FontAwesomeIcon icon={faCoffee}/>  Review</button></Link> <br/>
-            <Link to="/"><button class="button-size mt-4">Home Page</button></Link>
+            <Link ><button class="mt-4 button-size"> <FontAwesomeIcon icon={faShoppingCart}/> Book Payment</button></Link> <br/>
+            <Link ><button class="mt-4 button-size">  <FontAwesomeIcon icon={faList}/>  Booking List</button></Link> <br/>
+            <Link ><button class="mt-4 button-size"> <FontAwesomeIcon icon={faCommentAlt}/>  Review</button></Link> <br/>
+            <Link to="/"><button class="button-size mt-4"> <FontAwesomeIcon icon={faHome}/> Home Page</button></Link>
          </div>
       </div>
    );

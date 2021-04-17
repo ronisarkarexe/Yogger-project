@@ -1,15 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {UserContext} from '../../../App'
+import Sidebar from '../Sidebar/Sidebar';
 
 const OrderList = () => {
 
    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
+   const [orderList, setOrderList] = useState([])
+
+   useEffect(() => {
+      fetch('http://localhost:5000/cartDetails')
+      .then(res => res.json())
+      .then(data => setOrderList(data))
+   },[])
+
+
    return (
       <section>
-        <div className="container">
-         <h4>CheckOut</h4>
-         <div className="check-out">
+        <div class="container row">
+            {/* <Sidebar></Sidebar> */}
+         <div class="check-out col-md-9">
             <div>
                <table className="table">
                   <thead>
@@ -20,13 +30,15 @@ const OrderList = () => {
                         <th>Status</th>
                   </thead>
                   <tbody>
-                     <tr>
-                        <td>{loggedInUser.name}</td>
-                        <td>{loggedInUser.email}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                     </tr>
+                     {
+                        orderList.map(order =>  <tr>
+                           <td>{loggedInUser.name}</td>
+                           <td>{loggedInUser.email}</td>
+                           <td>{order.name}</td>
+                           <td>Credit Card</td>
+                           <td></td>
+                        </tr>)
+                     }
                   </tbody>
                </table>
             </div>

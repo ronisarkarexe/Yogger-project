@@ -36,6 +36,7 @@ const SimpleFrom = () => {
     } else {
       setPaymentSuccess(paymentMethod.id);
       setPaymentError(null)
+      console.log(paymentMethod)
     }
   };
 
