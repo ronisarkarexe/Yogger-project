@@ -1,0 +1,14 @@
+.button-click{
+   margin-top:180px;
+   margin-left: 38%;
+   background-color: rgb(255, 244, 244);
+   width:300px;
+   height:38px;
+   border-radius:20px;
+   border:none;
+   box-shadow: 5px 5px 10px rgba(223, 223, 223, 0.7)
+}
+.image-google{
+   height:30px;
+   width: 30px;
+}

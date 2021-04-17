@@ -1,0 +1,17 @@
+.card-info{
+   padding:35px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   text-align: start;
+   border-radius:8px;
+   z-index: 1000;
+   background-color: white;
+}
+.image-circle{
+   border-radius:50%;
+   width:60px;
+   height:60px;
+   background-size: cover;
+}
+.info-indent h5{
+   color: #FA615C;
+}
