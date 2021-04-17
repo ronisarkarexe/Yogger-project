@@ -1,7 +1,10 @@
 .booking-center{
    border: 1px solid lightgrey;
-   height:250px;
-   width: 300px;
+   height:300px;
+   width: 330px;
+   background-color: #FFFFFF;
+   border: none;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .image-size-card{
    width:120px;

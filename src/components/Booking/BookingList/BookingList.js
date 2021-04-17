@@ -11,10 +11,11 @@ const BookingList = () => {
       .then(data => setBook(data))
    },[])
 
+
    return (
-      <section class="">
+      <section class="container">
          <div class="row">
-            <div class="d-flex">
+            <div class="display-flex">
                {
                   book.map(books => <BookDetails books={books}></BookDetails>)
                }

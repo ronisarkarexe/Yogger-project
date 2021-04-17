@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
-import BookSidbar from '../BookSidbar/BookSidbar';
 import BookingList from '../BookingList/BookingList';
 import BookPayment from '../BookPayment/BookPayment';
 import Review from '../Review/Review';
+import BookSidbar from '../BookSidbar/BookSidbar'
 const Book = () => {
 
    const {id} = useParams()
@@ -21,6 +21,12 @@ const Book = () => {
       .then(res => console.log('server side response', res));
    },[id])
 
+   const [booked, setBooked] = useState({
+      bookList: true,
+      bookPayment: false,
+      review: false
+   })
+
    return (
       <section>
          <div class="row">
@@ -29,9 +35,9 @@ const Book = () => {
                   <BookSidbar></BookSidbar>
                </div>
                <div className="col-md-9 bg-color">
-                  {/* <BookingList></BookingList> */}
-                  {/* <BookPayment></BookPayment> */}
-                  <Review></Review>
+                  {  !booked && <BookingList></BookingList> }
+                  {  !booked && <BookPayment></BookPayment> }
+                  {  booked && <Review></Review>}
                </div>
             </div>
          </div>

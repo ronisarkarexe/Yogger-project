@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../../App';
-
 const Review = () => {
 
    const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -28,12 +27,12 @@ const Review = () => {
 
 
    return (
-      <div>
+      <div class="mt-4">
          <form onSubmit={handleSubmit(onSubmit)}>
-            <input name="opinion" defaultValue="" placeholder="Enter opinion" {...register("opinion")} /> <br/>
-            <input name="name" defaultValue="" placeholder="Enter your name" {...register("name")} /> <br/>
-            <input name="title" defaultValue="" placeholder="Enter trainer title" {...register("title")} /> <br/>
-            <input type="submit" />
+            <textarea class="input-group" name="opinion" defaultValue="" placeholder="Enter opinion" {...register("opinion")} /> <br/>
+            <input class="input-group" name="name" defaultValue="" placeholder="Enter your name" {...register("name")} /> <br/>
+            <input class="input-group" name="title" defaultValue="" placeholder="Enter trainer title" {...register("title")} /> <br/>
+            <input class="btn-brand" type="submit" />
          </form>
       </div>
    );

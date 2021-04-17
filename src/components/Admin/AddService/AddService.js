@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import Sidebar from '../Sidebar/Sidebar';
+import AdminLayout from '../../Layout/AdminLayout';
+import './AddService.css';
+
 const axios = require('axios').default;
 
 const AddService = () => {
@@ -49,19 +51,22 @@ const AddService = () => {
    }
 
    return (
-      <section class="container-fluid">
+      <AdminLayout>
+         <section class="container-fluid mt-4">
         <div class="row">
-            <div class="">
+            <div class="add-services">
+               <h3>Add Services</h3>
                <form onSubmit={handleSubmit(onSubmit)}>
-                  <input name="name" defaultValue="" placeholder="Enter name" {...register("name")} /> <br/>
-                  <input name="price" defaultValue="" placeholder="Enter price" {...register("price")} /> <br/>
-                  <input name="description" defaultValue="" placeholder="Enter description" {...register("description")} /> <br/>
+                  <input class="input-group" name="name" defaultValue="" placeholder=" Enter name" {...register("name")} /> <br/>
+                  <input class="input-group" name="price" defaultValue="" placeholder=" Enter price" {...register("price")} /> <br/>
+                  <textarea class="input-group" name="description" defaultValue="" placeholder=" Enter description" {...register("description")} /> <br/>
                   <input type="file" name="image" onChange={handelImageUploaded} /> <br/>
-                  <input type="submit" />
+                  <input class="btn-brand mt-4" type="submit" />
                </form>
             </div>
          </div>
       </section>
+      </AdminLayout>
    );
 };
 

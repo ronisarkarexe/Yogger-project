@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {UserContext} from '../../../App'
-import Sidebar from '../Sidebar/Sidebar';
+import AdminLayout from '../../Layout/AdminLayout';
+import Sidebar from '../../Layout/Sidebar/Sidebar';
 
 const OrderList = () => {
 
@@ -16,10 +17,10 @@ const OrderList = () => {
 
 
    return (
-      <section>
+      <AdminLayout>
+         <section>
         <div class="container row">
-            {/* <Sidebar></Sidebar> */}
-         <div class="check-out col-md-9">
+         <div class="">
             <div>
                <table className="table">
                   <thead>
@@ -45,6 +46,7 @@ const OrderList = () => {
          </div>
       </div>
       </section>
+      </AdminLayout>
    );
 };
 

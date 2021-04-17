@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import SimpleFrom from '../SimpleFrom/SimpleFrom';
@@ -9,6 +9,7 @@ const stripePromise = loadStripe('pk_test_51Ie1dzE9NKB64CMlxhjAh6w9YsrBlaL5yURP3
 const BookPayment = () => {
 
    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+  
 
    return (
       <section>
@@ -16,6 +17,7 @@ const BookPayment = () => {
                <div class>
                   <h4>Name: {loggedInUser.name}</h4>
                   <h4>Email: {loggedInUser.email}</h4>
+                  <h5>Course Name: </h5>
                </div>
                <div class="simple-cart mt-5">
                   <h5 class="mb-4">Pay With</h5>
