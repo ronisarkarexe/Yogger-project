@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import AdminLayout from '../../Layout/AdminLayout';
 import './AddService.css';
-
+import {UserContext} from '../../../App'
 const axios = require('axios').default;
 
 const AddService = () => {
 
    const { register, handleSubmit, formState: { errors } } = useForm();
+
 
    const [imageURL, setImageURL] = useState(null)
 
@@ -17,6 +18,7 @@ const AddService = () => {
       const eventData = {
          name: data.name,
          price: data.price,
+         id: data.id,
          description: data.description,
          image:imageURL,
       };
@@ -58,8 +60,13 @@ const AddService = () => {
                <h3>Add Services</h3>
                <form onSubmit={handleSubmit(onSubmit)}>
                   <input class="input-group" name="name" defaultValue="" placeholder=" Enter name" {...register("name")} /> <br/>
+
                   <input class="input-group" name="price" defaultValue="" placeholder=" Enter price" {...register("price")} /> <br/>
+
+                  <input class="input-group" name="id" defaultValue="" placeholder=" Enter id" {...register("id")} /> <br/>
+
                   <textarea class="input-group" name="description" defaultValue="" placeholder=" Enter description" {...register("description")} /> <br/>
+
                   <input type="file" name="image" onChange={handelImageUploaded} /> <br/>
                   <input class="btn-brand mt-4" type="submit" />
                </form>

@@ -57,8 +57,8 @@ function App() {
           <Route path="/orderList">
             <OrderList></OrderList>
           </Route>
-          <Route path="#">
-            <MakeAdmin></MakeAdmin>
+          <Route path="/bookingList">
+           <BookingList></BookingList>
           </Route>
         </Switch>
       </Router>

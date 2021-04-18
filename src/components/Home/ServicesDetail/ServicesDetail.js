@@ -9,10 +9,11 @@ const ServicesDetail = (props) => {
 
    const bookingYogaService = (serviceId) => {
       const url = `/book/${serviceId}`;
-      history.push(url);
-      console.log('hello', url)
+      history.push({
+         pathname: '/book/url',
+         state:{name, price, image, description,}
+      })
    }
-
 
    return (
       <section class="col-md-4 mt-5 mb-5 pb-5">

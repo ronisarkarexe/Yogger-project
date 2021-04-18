@@ -12,6 +12,7 @@ const Review = () => {
 
       const reviewData = {
          name: data.name,
+         email: data.email,
          title: data.title,
          opinion: data.opinion,
       }
@@ -30,8 +31,13 @@ const Review = () => {
       <div class="mt-4">
          <form onSubmit={handleSubmit(onSubmit)}>
             <textarea class="input-group" name="opinion" defaultValue="" placeholder="Enter opinion" {...register("opinion")} /> <br/>
+
+            <input class="input-group" name="email" defaultValue={loggedInUser.email} placeholder=" Enter Email" {...register("email")} /> <br/>
+
             <input class="input-group" name="name" defaultValue="" placeholder="Enter your name" {...register("name")} /> <br/>
+
             <input class="input-group" name="title" defaultValue="" placeholder="Enter trainer title" {...register("title")} /> <br/>
+
             <input class="btn-brand" type="submit" />
          </form>
       </div>

@@ -1,3 +1,17 @@
 .bg-color{
    background-color: #F1F3F5;
 }
+
+.button-size{
+   border: none;
+   background-color: #FFFFFF;
+   font-size:17px;
+   
+}
+.sidebar-contain{
+   height: 100vh;
+}
+.image-size{
+   width: 50px;
+   height: 50px;
+}
