@@ -17,7 +17,7 @@ const Navbar = () => {
          <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
             <a class="navbar-brand" href="#"> <img class="image-icon mb-1" src={icon} alt=""/></a>
-               <a class="navbar-brand nav-text"  href="#"> YOGGER</a>
+               <a class="navbar-brand nav-text"  href="#">YOGGER</a>
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                </button>
@@ -31,7 +31,7 @@ const Navbar = () => {
                            <Link class="nav-link me-5" to="/about">About</Link>
                      </li>
                      <li class="nav-item">
-                           <Link class="nav-link me-5" to="/contact">Contact Us</Link>
+                           <Link class="nav-link me-5" to="/contact">Contacts Us</Link>
                      </li>
 
                      {loggedInUser.isAdmin && loggedInUser.isLoggedIn && <div> 
