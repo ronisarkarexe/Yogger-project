@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import BookingList from '../BookingList/BookingList';
 import Review from '../Review/Review';
 import { Link } from 'react-router-dom';
@@ -16,7 +16,7 @@ const Book = () => {
 
    const [bookList, setBookList] = useState(true)
 
-   const url = 'http://localhost:5000/addToServices';
+   const url = 'https://boiling-falls-89855.herokuapp.com/addToServices';
    useEffect(() => {
       fetch(url,{
          method: 'POST',

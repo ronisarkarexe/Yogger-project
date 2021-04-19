@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { UserContext } from '../../../App';
 const Review = () => {
 
-   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+   const { register, handleSubmit, formState: { errors } } = useForm();
 
    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
@@ -16,7 +16,7 @@ const Review = () => {
          title: data.title,
          opinion: data.opinion,
       }
-       const url = 'http://localhost:5000/addReview'
+       const url = 'https://boiling-falls-89855.herokuapp.com/addReview'
 
        fetch(url, {
           method: 'POST',

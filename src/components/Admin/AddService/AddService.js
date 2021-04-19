@@ -23,7 +23,7 @@ const AddService = () => {
          image:imageURL,
       };
 
-      const url =`http://localhost:5000/addServer`;
+      const url =`https://boiling-falls-89855.herokuapp.com/addServer`;
 
       fetch(url, {
          method: 'POST',

@@ -6,7 +6,7 @@ const Trainer = () => {
    return (
       <section class="container">
          <div class="row mt-5 mb-5 pt-2 pb-2">
-            <div class="col-md-6 pt-4 mt-5 trainer">
+            <div class="col-md-6 col-sm-6 pt-4 mt-5 trainer">
                <h4>Welcome to yogger studio</h4>
                <hr class="h4-hr"/>
                <h1 class="mt-4 mb-4">Yoga life for<br/>greater sellf<br/>control</h1>

@@ -17,7 +17,7 @@ const MakeAdmin = () => {
          email: data.email,
       }
 
-      const url = 'http://localhost:5000/addAdminEmail';
+      const url = 'https://boiling-falls-89855.herokuapp.com/addAdminEmail';
 
       fetch(url, {
          method: 'POST',
@@ -32,7 +32,7 @@ const MakeAdmin = () => {
 
 
    useEffect(() => {
-      fetch('http://localhost:5000/addAdminMail')
+      fetch('https://boiling-falls-89855.herokuapp.com/addAdminMail')
       .then(res => res.json())
       .then(data => setAdmin(data))
    },[])

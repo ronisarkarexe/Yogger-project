@@ -6,6 +6,7 @@ const BasicYoga = () => {
    return (
       <div class="container">
          <div class="row mt-5 mb-5 pt-5 pb-5">
+            <h1 class="text-center mb-5">YOGA LIST</h1>
             <div class="d-flex justify-content-center">
                <div class="col-md-8">
                   <img class="img-fluid rounded" src={basic} alt=""/>

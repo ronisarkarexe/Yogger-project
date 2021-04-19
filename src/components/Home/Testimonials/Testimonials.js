@@ -7,7 +7,7 @@ const Testimonials = () => {
    const [testimonialsData, setTestimonialsData] = useState([])
 
    useEffect(() => {
-      fetch('http://localhost:5000/clientReview')
+      fetch('https://boiling-falls-89855.herokuapp.com/clientReview')
       .then(res => res.json())
       .then(data => setTestimonialsData(data))
    },[])

@@ -7,7 +7,7 @@ const ManageServices = () => {
 
 
    useEffect(() => {
-      fetch('http://localhost:5000/services')
+      fetch('https://boiling-falls-89855.herokuapp.com/services')
       .then(res => res.json())
       .then(data => setManageServices(data))
    },[])
@@ -17,7 +17,7 @@ const ManageServices = () => {
 
    const handelDelete = (id) => {
       console.log(id)
-      fetch(`http://localhost:5000/delete/${id}`,{
+      fetch(`https://boiling-falls-89855.herokuapp.com/delete/${id}`,{
          method: 'DELETE',
       })
       .then(res => res.json())

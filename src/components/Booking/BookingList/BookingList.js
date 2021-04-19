@@ -1,9 +1,12 @@
-import React from 'react';
-import { useLocation } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import BookPayment from '../BookPayment/BookPayment';
 import './BookingList.css';
 
 const BookingList = () => {
+   
+
+   const history = useHistory()
 
    const location = useLocation();
    const courseInfo = location.state;
@@ -13,7 +16,7 @@ const BookingList = () => {
       <section class="d-flex">
          <div class="row">
             <div class="col-md-5">
-               <div class="booking-center mt-4 ps-2">
+            <div class="booking-center mt-4 ps-2">
                   <div class="image-size-card">
                      <img class="img-fluid" src={image} alt=""/>
                   </div>

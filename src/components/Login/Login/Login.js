@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -6,7 +6,7 @@ import firebaseConfig from '../firebase.confige';
 import './Login.css'
 import icon from '../../../Icon/Group 573.png';
 import { UserContext } from '../../../App';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -30,13 +30,14 @@ const Login = () => {
       .signInWithPopup(googleProvider)
       .then((result) => {
          const { displayName, email} = result.user;
-         console.log(displayName, email);
-         const signInUser = {
-            name: displayName, 
-            email: email,
-         }
-         setLoggedInUser(signInUser)
-         history.replace(from);
+         adminCheck(email, displayName);
+         // console.log(displayName, email);
+         // const signInUser = {
+         //    name: displayName, 
+         //    email: email,
+         // }
+         // setLoggedInUser(signInUser)
+         // history.replace(from);
       }).catch((error) => {
          var errorCode = error.code;
          var errorMessage = error.message;
@@ -45,6 +46,27 @@ const Login = () => {
          console.log(error,errorMessage,errorCode,email,credential)
       });
    }
+
+   const adminCheck = (email, name) =>{
+      fetch('https://boiling-falls-89855.herokuapp.com/addAdminEmail',{
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({email: loggedInUser.email})
+         })
+         .then(res => res.json())
+         .then(data => {
+            const newUser = {
+               email: email,
+               name: name,
+               isAdmin: data,
+               isLoggedIn: true,
+            }
+            setLoggedInUser(newUser);
+            history.replace(from);
+         })
+      }
+
+   console.log("My Info",loggedInUser)
 
    return (
       <div class='container'>

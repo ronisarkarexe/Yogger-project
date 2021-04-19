@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {UserContext} from '../../../App'
 import AdminLayout from '../../Layout/AdminLayout';
-import Sidebar from '../../Layout/Sidebar/Sidebar';
 
 const OrderList = () => {
 
@@ -10,12 +9,11 @@ const OrderList = () => {
    const [orderList, setOrderList] = useState([])
 
    useEffect(() => {
-      fetch('http://localhost:5000/cartDetails')
+      fetch('https://boiling-falls-89855.herokuapp.com/services')
       .then(res => res.json())
       .then(data => setOrderList(data))
    },[])
 
-   
 
 
    return (
@@ -30,7 +28,6 @@ const OrderList = () => {
                         <th>Email Id</th>
                         <th>Service</th>
                         <th>Pay With</th>
-                        <th>Status</th>
                   </thead>
                   <tbody>
                      {
@@ -39,7 +36,6 @@ const OrderList = () => {
                            <td>{loggedInUser.email}</td>
                            <td>{order.name}</td>
                            <td>Credit Card</td>
-                           <td></td>
                         </tr>)
                      }
                   </tbody>

@@ -9,7 +9,7 @@ const Services = () => {
 
 
    useEffect(() => {
-      fetch('http://localhost:5000/services')
+      fetch('https://boiling-falls-89855.herokuapp.com/services')
       .then(res => res.json())
       .then(data => setServices(data))
    },[])
@@ -18,7 +18,7 @@ const Services = () => {
 
    return (
       <section class="container">
-         <h2 class="text-center mt-4">Offering courses</h2>
+         <h2 class="text-center mt-4">Offering services</h2>
          <div class="row">
             <div class="d-flex justify-content-center">
                {
