@@ -31,3 +31,11 @@ Cors
 Body-perser
 Nodemon
 Dotent
+
+### Project Summary
+1 Yoga is a Full Stack booking Application. Users can choices
+  her/his desire Service.
+2 Cultivated positive relationships with participants by
+  interacting with groups during fitness classes.
+3 Developed safe and effective exercise programs for class
+  members.
